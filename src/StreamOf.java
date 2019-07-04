@@ -1,11 +1,14 @@
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
 
 public class StreamOf {
     public static void main(String[] args) {
-        Stream.of("Anuradha", "Sameera", "Nirupama", "Pavithra", "Awanthi")
+        List<String> names = Arrays.asList("Anuradha", "Aziz", "Sameera", "Nirupama", "Pavithra", "Awanthi");
+        names.stream()
+                .map( String::toLowerCase)
+                .filter(x -> x.startsWith("a"))
                 .sorted()
-                .findFirst()
-                .ifPresent(System.out::println);
+                .forEach(System.out::println);
 
     }
 }
